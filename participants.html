@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('con.jpg');
+            background-size: cover;
+        }
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100%;
+            
+        }
+        th{
+            border: 1px solid black;
+        }
+        td{
+            border: 1px solid black;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Список участников конференции</title>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">Список зарегистрированных участников научной конференции</h2>
+        <table>
+           <colgroup>
+            <col span="3" style="background-color: rgba(242, 21, 58, 0.27);">
+            <col span="2" style="background-color: rgba(80, 21, 242, 0.411);">
+            <col span="4" style="background-color: rgba(209, 242, 21, 0.371);">
+        </colgroup>
+            <thead>
+                <tr>
+                    <th>Фамилия</th>
+                    <th>Имя</th>
+                    <th>Отчество</th>
+                    <th>Телефон</th>
+                    <th>Email</th>
+                    <th>Секция конференции</th>
+                    <th>Дата рождения</th>
+                    <th>Доклад</th>
+                    <th>Тема доклада</th>
+                </tr>
+            </thead>
+            <tbody>
+                                    <tr>
+                        <td>Смирнов</td>
+                        <td>Евгений</td>
+                        <td>Александрович</td>
+                        <td>+79998135795</td>
+                        <td>smirnoveal@yandex.ru</td>
+                        <td>physics</td>
+                        <td>1994-03-04</td>
+                        <td>1</td>
+                        <td>Теория относительности</td>
+                    </tr>
+                                  
+                    <tr>
+                        <td>Иванов</td>
+                        <td>Петр</td>
+                        <td>Сергеевич</td>
+                        <td>+79154682606</td>
+                        <td>ivanovPS@gmail.com</td>
+                        <td>informatics</td>
+                        <td>1998-01-01</td>
+                            <td></td>
+                            <td></td>
+                        </td>
+
+                    </tr>
+                            </tbody>
+        </table>
+        <a href="index.html" class="back-to-registration">Вернуться к регистрации</a>
+    </div>
+</body>
+</html>

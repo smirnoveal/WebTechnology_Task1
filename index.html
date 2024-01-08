@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #795df4;
+            background-image: url('logo.jpg');
+            background-size: cover;
+        }
+
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            padding: 25px;
+            background-color: #ed1212;
+            opacity: 0.85;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #c4ed10;
+            color: rgb(15, 14, 14);
+            cursor: pointer;
+        }
+
+        .response {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #c7ef11;
+            color: white;
+        }
+
+        input[type="radio"] {
+           width: auto;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .view-participants {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #c7ef11;
+            color: #111111;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .view-participants:hover {
+            background-color: #27ae60;
+        }
+
+    </style>
+    <title>Conference Registration</title>
+</head>
+<body>
+    <div class="container">
+        <form action="test.php" method="post">
+            <h2>Форма регистрации на конференцию</h2>
+            <label for="surname">Фамилия:</label>
+            <input type="text" id="surname" name="surname" required pattern="[А-Яа-яЁё]+" placeholder="Фамилия">
+
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required pattern="[А-Яа-яЁё]+" placeholder="Имя">
+
+            <label for="patronymic">Отчество:</label>
+            <input type="text" id="patronymic" name="patronymic" required pattern="[А-Яа-яЁё]+" placeholder="Отчество">
+
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" required pattern="\+7[0-9]{10}" placeholder="+71234567890">
+
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email" required placeholder="example@example.com">
+
+            <label for="section">Секция:</label>
+            <select id="section" name="section" required>
+                <option value="math">Математика</option>
+                <option value="physics">Физика</option>
+                <option value="informatics">Информатика</option>
+            </select>
+
+            <label for="dob">Дата рождения:</label>
+            <input type="date" id="dob" name="dob">
+            <div>
+                <label for="presentation">Доклад:</label>
+            <label for="presentation_yes"><input type="radio" id="presentation_yes" name="presentation" value="yes">Да</label>
+            
+            <label for="presentation_no"><input type="radio" id="presentation_no" name="presentation" value="no" checked>Нет</label>
+            </div>
+            
+
+            <label for="topic" id="topicText" style="display: none;">Тема доклада:</label>
+            <input type="text" id="topic" name="topic" style="display: none;">
+
+            <input type="submit" value="Отправить">
+        </form>
+        <a href="participants.html" class="view-participants">Просмотреть участников</a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var presentationYes = document.getElementById('presentation_yes');
+            var presentationNo = document.getElementById('presentation_no');
+            var topicField = document.getElementById('topic');
+            var topicText = document.getElementById('topicText');
+
+            presentationYes.addEventListener('change', function() {
+                topicField.style.display = 'block';
+                topicText.style.display = 'block';
+            });
+
+            presentationNo.addEventListener('change', function() {
+                topicField.style.display = 'none';
+                topicText.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
